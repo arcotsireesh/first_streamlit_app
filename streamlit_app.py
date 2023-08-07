@@ -33,6 +33,24 @@ streamlit.header('Fruityvice Fruit Advice!')
 fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
 streamlit.write('The user entered ', fruit_choice)
 
+use role pc_rivery_role;
+use warehouse pc_rivery_wh;
+
+create or replace TABLE PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST (
+	FRUIT_NAME VARCHAR(25)
+);
+
+insert into PC_RIVERY_DB.PUBLIC.FRUIT_LOAD_LIST
+values ('banana')
+, ('cherry')
+, ('strawberry')
+, ('pineapple')
+, ('apple')
+, ('mango')
+, ('coconut')
+, ('plum')
+, ('avocado')
+, ('starfruit');
 
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
